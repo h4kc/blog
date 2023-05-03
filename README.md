@@ -2,17 +2,17 @@ This is [My Blog](http://hackawa.com)
 
 ## Done
 UI
-    - Set up a Next js 13 Project
-    - Home Page Navbar
-    - Hero Section
-    - Footer  
-    - Add Components : Links, Icons, Buttons    
-    - Second Navbar
-    - Blog Item Component  
-    -blog/[id]
+        - Set up a Next js 13 Project
+        - Home Page Navbar
+        - Hero Section
+        - Footer  
+        - Add Components : Links, Icons, Buttons    
+        - Second Navbar
+        - Blog Item Component  
+        -blog/[id]
 Logic
-  - Get Posts From Notion  
- - Get Single Post From Notion
+        - Get Posts From Notion  
+        - Get Single Post From Notion
 
 ## To Do
 UI
@@ -24,7 +24,6 @@ Logic
     - Get Single Course From Notion
 ## Issues
     - usepathname issue
-    - navbar active link issue
     -langage issue
     - fonts issue
 

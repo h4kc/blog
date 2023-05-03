@@ -13,6 +13,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const pathname = usePathname()
+  console.log(pathname.includes("/blog") )
   const header =
     pathname === "/" ? <><div className="h-2.5 mt-20 bg-red-600 "></div>
       <div className="mt-3 text-center	">
@@ -32,10 +33,10 @@ export default function RootLayout({
         /></Link>
       <div className=" flex justify-center align-middle flex-wrap">
         {/* TODO : Make it An Array */}
-        <Link className={pathname !== "/blog" ? "mx-3 md:mx-6 text-xl font-bold	" : "mx-3  md:mx-6 text-xl  text-red-600 font-bold"} href={"/blog "}>Blog</Link>
-        <Link className="mx-3 md:mx-6 text-xl font-bold	" href={"/courses "}>Courses</Link>
-        <Link className="mx-3  md:mx-6 text-xl font-bold	" href={"/projects "}>Projects</Link>
-        <Link className="mx-3  md:mx-6 text-xl font-bold	" href={"/aboutme "}>About me</Link>
+        <Link className={!pathname.includes("/blog") ? "mx-2 md:mx-6 text-xl font-bold	" : "mx-3  md:mx-6 text-xl  text-red-600 font-bold"} href={"/blog "}>Blog</Link>
+        <Link className="mx-2 md:mx-6 text-xl font-bold	" href={"/courses "}>Courses</Link>
+        <Link className=" mx-2  md:mx-6 text-xl font-bold	" href={"/projects "}>Projects</Link>
+        <Link className=" mx-2  md:mx-6 text-xl font-bold	" href={"/aboutme "}>About me</Link>
 
       </div>
     </div>

@@ -10,8 +10,7 @@ export default function PostItem({ link, title, intention, description, category
             <p className="font-normal text-gray-400 ">{description}</p>
             <span className="text-xs text-gray-300">{createdAt}</span>
             <div className='mt-2'>
-                <span className='px-3 py-1 rounded-lg bg-red-600 text-orange-300 font-bold' >{intention}</span>
-                <span className='px-3 py-1 mx-3 rounded-lg bg-orange-300 text-red-600 font-bold' >{category}</span>
+                <span className='px-3 py-1 rounded-lg bg-orange-300 text-red-600 font-bold' >{category}</span>
             </div>
         </Link>
     )
