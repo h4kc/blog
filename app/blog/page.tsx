@@ -6,7 +6,6 @@ const now = new Date()
 
 export default async function page() {
     const results = await getPosts()
-    await getPost("introduction-to-cyber")
 
     return (
         <div className=' flex flex-col items-center justify-center'>

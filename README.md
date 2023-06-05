@@ -1,7 +1,7 @@
 This is [My Blog](http://hackawa.com) 
 
 ## Done
-UI
+#UI
         - Set up a Next js 13 Project
         - Home Page Navbar
         - Hero Section
@@ -10,7 +10,7 @@ UI
         - Second Navbar
         - Blog Item Component  
         -blog/[id]
-Logic
+#Logic
         - Get Posts From Notion  
         - Get Single Post From Notion
 
@@ -23,9 +23,9 @@ Logic
     - Get Courses from Notion
     - Get Single Course From Notion
 ## Issues
-    - usepathname issue
-    -langage issue
-    - fonts issue
+        - usepathname issue
+        -langage issue
+        - fonts issue
 
 First, Edit .env  and the data.tsx file 
 then run the development server:

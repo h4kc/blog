@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const pathname = usePathname()
-  console.log(pathname.includes("/blog") )
+
   const header =
     pathname === "/" ? <><div className="h-2.5 mt-20 bg-red-600 "></div>
       <div className="mt-3 text-center	">

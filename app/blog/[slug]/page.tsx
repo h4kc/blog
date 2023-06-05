@@ -1,11 +1,16 @@
 
-import { getPost } from '@/lib/notion';
+import { getPost, getPosts } from '@/lib/notion';
 import Markdown from 'markdown-to-jsx';
 
+// export async function generateStaticParams() {
+//     const posts = await getPosts()
+//     return posts.map((post) => ({
+//         slug: post.link,
+//     }));
+// }
 async function Postpage(props: any) {
 
     const result = await getPost(props.params.slug)
-
     return (
         <div>
             {result ?
