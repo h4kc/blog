@@ -10,14 +10,15 @@ This is [My Blog](http://hackawa.com)
         - Second Navbar
         - Blog Item Component  
         -blog/[id]
+        - Projects
 #Logic
         - Get Posts From Notion  
         - Get Single Post From Notion
+        - Get Projects FRom notion
 
 ## To Do
 UI
     - Course Item Component
-    - Projects 
     -About me 
 Logic
     - Get Courses from Notion

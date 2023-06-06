@@ -2,6 +2,7 @@ import { Client } from '@notionhq/client';
 import { PostMetadata } from "./PostMetadata"
 import { parse } from 'date-fns';
 import { NotionToMarkdown } from "notion-to-md"
+import { ProjectMetadata } from './ProjectMetada';
 // create the notion Client
 const client = new Client({
     auth: process.env.NOTION_KEY,
@@ -82,7 +83,35 @@ const stringToDate = (date: string): string => {
     return dateDate.toUTCString()
 }
 
+const pageTproject = (page: any): ProjectMetadata => {
+    return {
+        id: page.id,
+        status: page.properties.Status.select.name,
+        title: page.properties.Title.title[0].plain_text,
+        category: page.properties.Categorie.select.name,
+        description: page.properties.Description.rich_text[0].plain_text,
+        github: page.properties.Github.url
+    }
+}
+// Get All published Posts
+async function getProjects(): Promise<ProjectMetadata[]> {
+
+    try {
+        let myProjects = await client.databases.query({
+            database_id: `${process.env.PROJECTS_DATABASE}`,
+        });
+
+        return myProjects.results.map(page => pageTproject(page))
+    } catch (error) {
+        console.log(error)
+        return []
+    }
+
+}
+
+
 export {
     getPosts,
-    getPost
+    getPost,
+    getProjects
 }
