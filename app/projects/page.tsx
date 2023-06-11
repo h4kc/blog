@@ -9,7 +9,7 @@ export default async function page() {
     const results = await getProjects()
 
     return (
-        <div className=' flex flex-wrap items-center justify-around'>
+        <div className=' flex flex-wrap items-center justify-center'>
             {
                 results.length ? results.
                     map(r => <ProjectItem key={r.id} {...r} />)
