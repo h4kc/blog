@@ -27,6 +27,7 @@ Logic
         - usepathname issue
         -langage issue
         - fonts issue
+        - implement conditions on the data coming from notion
 
 First, Edit .env  and the data.tsx file 
 then run the development server:
