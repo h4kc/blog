@@ -34,7 +34,7 @@ export default function RootLayout({
       <div className=" flex justify-center align-middle flex-wrap">
         {/* TODO : Make it An Array */}
         <Link className={!pathname.includes("/blog") ? "mx-2 md:mx-6 text-xl font-bold	" : "mx-3  md:mx-6 text-xl  text-red-600 font-bold"} href={"/blog "}>Blog</Link>
-        <Link className="mx-2 md:mx-6 text-xl font-bold	" href={"/courses "}>Courses</Link>
+        <Link className={!pathname.includes("/courses") ? "mx-2 md:mx-6 text-xl font-bold	" : "mx-3  md:mx-6 text-xl  text-red-600 font-bold"}  href={"/courses "}>Courses</Link>
         <Link className={!pathname.includes("/projects") ? "mx-2 md:mx-6 text-xl font-bold	" : "mx-3  md:mx-6 text-xl  text-red-600 font-bold"} href={"/projects "}>Projects</Link>
         <Link className={!pathname.includes("/aboutme") ? "mx-2 md:mx-6 text-xl font-bold	" : "mx-3  md:mx-6 text-xl  text-red-600 font-bold"} href={"/aboutme "}>About me</Link>
 

@@ -3,6 +3,7 @@ import { PostMetadata } from "./PostMetadata"
 import { parse } from 'date-fns';
 import { NotionToMarkdown } from "notion-to-md"
 import { ProjectMetadata } from './ProjectMetada';
+import { ModuleMetaData } from './ModuleMetadata';
 // create the notion Client
 const client = new Client({
     auth: process.env.NOTION_KEY,
@@ -108,10 +109,41 @@ async function getProjects(): Promise<ProjectMetadata[]> {
     }
 
 }
+const pageToCourses = (page: any): ModuleMetaData => {
+    return {
+        id: page.id,
+        title: page.properties.Nom.title[0].plain_text,
+        createdAt: stringToDate(page.created_time),
+        categories: page.properties.Categories.multi_select.map((a: any)=>a.name),
+        image: page.properties.Image.files[0].file.url,
+        description: page.properties.Description.rich_text[0].plain_text
 
+    } 
+}
+async function getCourses() {
 
+    try {
+        let myCourse = await client.databases.query({
+            database_id: `${process.env.MODULE_DATABASE}`,
+            filter: {
+                property: "Status",
+                select: {
+                    equals: "Published"
+                }
+            }
+         
+        });
+        
+       return myCourse.results.map(page => pageToCourses(page))
+    } catch (error) {
+        console.log(error)
+        return []
+    }
+
+}
 export {
     getPosts,
     getPost,
-    getProjects
+    getProjects,
+    getCourses
 }

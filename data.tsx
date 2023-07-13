@@ -46,7 +46,7 @@ export const data = {
             icon:<FaHandsHelping size={30} color="black" className="mx-1" />,
         },
         {
-            title:"ICS Auditing",
+            title:"ICS Auditing, Risk Management",
             icon:<MdVerifiedUser size={30} color="black" className="mx-1" />,
         },
         {
