@@ -7,5 +7,6 @@ export type ModuleMetaData = {
     categories: string[]
     image: string
     description: string
+    link:string
 
 }

@@ -6,7 +6,7 @@ import { MdVerifiedUser,MdDomainVerification,MdScreenSearchDesktop } from "react
 
 
 export const data = {
-
+    email:"hakcawa#gmail.com",
     socialLinks: [
         {
             plateform: "github",
@@ -66,6 +66,14 @@ export const data = {
             icon:<IoMdSchool size={30} color="black" className="mx-1" />,
         },
        
+    ],
+    aboutme:[
+        "Hi,",
+        "I'm a Software Engenier and Cyber Security Expert.",
+        "Coding is my PASSION and Cyber Security is my daily job.",
+        "I’m a self taught software developer and I hold a engineering degree in Cyber Security.",
+        "This website is all about my journey in the tech feild.",
+        "I'm sharing, also, all my personnel dev project and i'm doing my best to share everything i know in an easier way"
     ],
     footerSigniture: "H.B @2023 V1.0",
     title: "Cyber Security & Software Enginering",

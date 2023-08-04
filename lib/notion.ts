@@ -4,6 +4,7 @@ import { parse } from 'date-fns';
 import { NotionToMarkdown } from "notion-to-md"
 import { ProjectMetadata } from './ProjectMetada';
 import { ModuleMetaData } from './ModuleMetadata';
+import { CourseMetada } from './CourseMetadata';
 // create the notion Client
 const client = new Client({
     auth: process.env.NOTION_KEY,
@@ -100,6 +101,12 @@ async function getProjects(): Promise<ProjectMetadata[]> {
     try {
         let myProjects = await client.databases.query({
             database_id: `${process.env.PROJECTS_DATABASE}`,
+            filter: {
+                property: "Status",
+                select: {
+                    equals: "Published"
+                }
+            }
         });
 
         return myProjects.results.map(page => pageTproject(page))
@@ -116,7 +123,8 @@ const pageToCourses = (page: any): ModuleMetaData => {
         createdAt: stringToDate(page.created_time),
         categories: page.properties.Categories.multi_select.map((a: any)=>a.name),
         image: page.properties.Image.files[0].file.url,
-        description: page.properties.Description.rich_text[0].plain_text
+        description: page.properties.Description.rich_text[0].plain_text,
+        link: page.properties.Link.rich_text[0].plain_text
 
     } 
 }
@@ -141,9 +149,69 @@ async function getCourses() {
     }
 
 }
+const pageToCourseItem = (page: any): CourseMetada => {
+    return {
+        id: page.properties.order.number,
+        title: page.properties.Nom.title[0].plain_text,
+        link: page.properties.url.url,
+        goal:page.properties.Goals.rich_text[0].plain_text
+
+    } 
+}
+async function getCoursesById(id: string) {
+
+    try {
+        let courses = await client.databases.query({
+            database_id: `${process.env.COURSES_DATABASE}`,
+          
+            filter: {
+                and:[
+                    {
+                        property: "Link",
+                        formula: {
+                            string: {
+                                equals: id
+                            }
+        
+                        }
+                    },
+                    {
+                        property: "Status",
+                        select: {
+                            equals: "published"
+                        }
+                    }
+
+                ]
+               
+                
+            },
+          
+            sorts: [
+                {
+                    property: "order",
+                    direction: "ascending"
+                }
+            ]
+          
+        });
+
+        if (!courses.results.length) {
+            throw "no results found"
+        }
+        return courses.results.map(a=>pageToCourseItem(a))
+       
+
+    } catch (error) {
+        console.log(error)
+        return null
+    }
+
+}
 export {
     getPosts,
     getPost,
     getProjects,
-    getCourses
+    getCourses,
+    getCoursesById
 }
