@@ -19,8 +19,8 @@ export const data = {
             icon: <FaTwitter size={25} color="lightgray" className="mx-1" />
         },
         {
-            plateform: "https://www.linkedin.com/in/saad-abbou-66555625b/",
-            link: "/saad",
+            plateform: "linkedin",
+            link: "https://www.linkedin.com/in/saad-abbou-66555625b/",
             icon: <FaLinkedin size={25} color="lightgray" className="mx-1" />
         }
 

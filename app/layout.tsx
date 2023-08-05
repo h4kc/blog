@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import "../styles/globals.css";
-import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { data } from "@/data";
-
+import { Roboto } from "next/font/google";
+const inter = Roboto({ weight: ['400', '700'], subsets:["latin"] });
 export default function RootLayout({
   children,
 }: {
@@ -108,7 +108,7 @@ export default function RootLayout({
     <html lang="en">
       <head />
 
-      <body>
+      <body className={inter.className}>
         <header>{header}</header>
         {children}
         <footer>{footer}</footer>
