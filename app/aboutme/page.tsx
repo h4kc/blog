@@ -2,7 +2,10 @@ import { data } from "@/data";
 import Image from "next/image";
 import Link from "next/link";
 import { FaEnvelope, FaMailBulk } from "react-icons/fa";
-
+export const metadata = {
+  title: "Hackawa",
+  description: "It's All About The Impact!",
+};
 export default function page() {
   return (
     <div className=" pr-7 pl-7 flex flex-col justify-center items-center mt-10">

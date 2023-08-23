@@ -1,6 +1,9 @@
 import { getCourses } from "../../lib/notion";
 import CourseItem from "@/components/CourseItem";
-
+export const metadata = {
+  title: "Hackawa",
+  description: "It's All About The Impact!",
+};
 const now = new Date();
 export default async function page() {
   const results = await getCourses();

@@ -5,7 +5,10 @@ import { data } from "@/data";
 import { FaEnvelope } from "react-icons/fa";
 
 
-
+export const metadata = {
+  title: "Hackawa",
+  description: "It's All About The Impact!",
+};
 export default function Home() {
   return (
     <>
@@ -39,8 +42,8 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="flex flex-col  p-10 ">
-        <h1 className="text-2xl font-bold text-orange-300 flex  items-center">
+      <div className="flex flex-col   ">
+        <h1 className=" p-10 text-2xl font-bold text-orange-300 flex  items-center">
           <span className="border-2 w-3 inline-block mr-1 mt-0.5 border-red-600"></span>
           Services
         </h1>
@@ -53,8 +56,8 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="flex flex-col  pl-10">
-        <h1 className="text-2xl font-bold text-red-600 flex  items-center">
+      <div className="flex flex-col  ">
+        <h1 className="pl-10 text-2xl font-bold text-red-600 flex  items-center">
           <span className="border-2 w-3 inline-block mr-1 mt-0.5 border-orange-300"></span>
           Technologies
         </h1>
@@ -86,8 +89,8 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="flex flex-col  pl-10">
-        <h1 className="text-2xl font-bold text-orange-300 flex  items-center">
+      <div className="flex flex-col  ">
+        <h1 className=" pl-10 text-2xl font-bold text-orange-300 flex  items-center">
           <span className="border-2 w-3 inline-block mr-1 mt-0.5 border-red-600"></span>
           Tools
         </h1>

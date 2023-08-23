@@ -2,7 +2,10 @@ import PostItem from "@/components/PostItem";
 import { getPost, getPosts } from "../../lib/notion";
 
 const now = new Date();
-
+export const metadata = {
+  title: "Hackawa",
+  description: "It's All About The Impact!",
+};
 export default async function page() {
   const results = await getPosts();
 

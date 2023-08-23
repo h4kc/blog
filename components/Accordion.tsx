@@ -12,7 +12,7 @@ function Accordion({ title, goal, link, id }: CourseMetada) {
   };
   const opts: YouTubeProps["opts"] = {
     height: "390",
-    width: "740",
+    width: "100%",
     playerVars: {
       autoplay: 0,
     },
@@ -32,7 +32,7 @@ function Accordion({ title, goal, link, id }: CourseMetada) {
       {open ? (
         <div className="p-3">
           <span>{goal}</span>
-          <div className="flex justify-center p-8">
+          <div className=" p-1">
             <YouTube
               videoId="2g811Eo7K8U"
               opts={opts}

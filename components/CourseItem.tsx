@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ModuleMetaData } from "@/lib/ModuleMetadata";
-import Image from "next/image";
 
 export default function CourseItem({
   id,
@@ -15,7 +14,7 @@ export default function CourseItem({
       className="block mt-3 w-80 ml-5 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 h-80"
     >
       <div className="w-80">
-        <Image
+        <img
           src={image}
           alt={"image"}
           width={0}

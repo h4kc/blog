@@ -7,6 +7,7 @@ import Image from "next/image";
 import { data } from "@/data";
 import { Roboto } from "next/font/google";
 const inter = Roboto({ weight: ['400', '700'], subsets:["latin"] });
+
 export default function RootLayout({
   children,
 }: {

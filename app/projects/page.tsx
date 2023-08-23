@@ -2,7 +2,10 @@ import { getProjects } from "../../lib/notion";
 import ProjectItem from "@/components/ProjectItem";
 
 const now = new Date();
-
+export const metadata = {
+  title: "Hackawa",
+  description: "It's All About The Impact!",
+};
 export default async function page() {
   const results = await getProjects();
 
