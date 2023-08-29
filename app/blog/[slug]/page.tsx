@@ -7,6 +7,10 @@ export async function generateStaticParams() {
         slug: post.link,
     }));
 }
+export const metadata = {
+  title: "Hackawa",
+  description: "It's All About The Impact!",
+};
 async function Postpage(props: any) {
   const result = await getPost(props.params.slug);
   return (

@@ -39,6 +39,7 @@ export default function Home() {
             alt="Picture of the author"
             width={250}
             height={350}
+            loading="eager" priority={true}
           />
         </div>
       </div>

@@ -20,7 +20,7 @@ export const data = {
         },
         {
             plateform: "linkedin",
-            link: "https://www.linkedin.com/in/saad-abbou-66555625b/",
+            link: "",
             icon: <FaLinkedin size={25} color="lightgray" className="mx-1" />
         }
 

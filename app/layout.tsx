@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { data } from "@/data";
 import { Roboto } from "next/font/google";
-const inter = Roboto({ weight: ['400', '700'], subsets:["latin"] });
+const inter = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -96,9 +96,13 @@ export default function RootLayout({
       <div className="flex items-center flex-col mt-20">
         <div className="flex">
           {data.socialLinks.map((s) => (
-            <Link key={s.link} href={s.link}>
-              {s.icon}
-            </Link>
+            <>
+              {s.link ? (
+                <Link key={s.link} href={s.link}>
+                  {s.icon}
+                </Link>
+              ) : null}{" "}
+            </>
           ))}
         </div>
         <span className="text-sm text-gray-300">{data.footerSigniture}</span>

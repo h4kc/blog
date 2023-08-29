@@ -1,6 +1,9 @@
 import Accordion from "@/components/Accordion";
 import { getCoursesById,getCourses } from "@/lib/notion";
-
+export const metadata = {
+  title: "Hackawa",
+  description: "It's All About The Impact!",
+};
 export async function generateStaticParams() {
     const posts = await getCourses()
     return posts.map((post) => ({

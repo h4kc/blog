@@ -115,7 +115,7 @@ const pageToCourses = (page: any): ModuleMetaData => {
     title: page.properties.Nom.title[0].plain_text,
     createdAt: stringToDate(page.created_time),
     categories: page.properties.Categories.multi_select.map((a: any) => a.name),
-    image: page.properties.Image.files[0].file.url,
+    image: page.properties.photo.rich_text[0].plain_text,
     description: page.properties.Description.rich_text[0].plain_text,
     link: page.properties.Link.rich_text[0].plain_text,
   };
