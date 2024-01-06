@@ -9,8 +9,12 @@ yarn dev
 # or
 pnpm dev
 ```
+## Articles
+- Article 1 : Who i'am 
+- Article 2 : let's learn k8s
+- Article 3 : let's learn k8s II Published
+- Article 4 : 30 YO, Starting 2024
 
-# Article 1 : Who i'am 
-# Article 2 : let's learn k8s
-# Article 3 : let's learn k8s II Published
-# Article 4 : 30 YO, Starting 2024
+## Projects 
+- Project 1 : Hackawa Website
+- Project 2 : Semgrep Json To Excel
